@@ -1,5 +1,8 @@
+include GroundsHelper
+
 class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /people
   # GET /people.json
@@ -28,6 +31,12 @@ class PeopleController < ApplicationController
 
     respond_to do |format|
       if @person.save
+        create_ground
+        #@ground = Ground.new(params[:ground])
+        #@ground.size = 2
+        #@ground.person_id = @person.id
+        #@ground.save
+
         format.html { redirect_to @person, notice: 'Person was successfully created.' }
         format.json { render :show, status: :created, location: @person }
       else

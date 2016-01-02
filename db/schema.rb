@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151230191622) do
+ActiveRecord::Schema.define(version: 20160102030443) do
+
+  create_table "grounds", force: :cascade do |t|
+    t.integer  "size",       limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "person_id",  limit: 4
+  end
+
+  add_index "grounds", ["person_id"], name: "index_grounds_on_person_id", using: :btree
 
   create_table "people", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -22,4 +31,19 @@ ActiveRecord::Schema.define(version: 20151230191622) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "plants", force: :cascade do |t|
+    t.string   "name",            limit: 255
+    t.time     "growth_time"
+    t.float    "energetic_value", limit: 24
+    t.float    "price",           limit: 24
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  create_table "spaces", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "grounds", "people"
 end

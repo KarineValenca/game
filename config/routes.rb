@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :spaces
+  resources :grounds
+  resources :plants
   get 'welcome/index'
 
   resources :people

@@ -1,0 +1,21 @@
+<%= form_for(@ground) do |f| %>
+  <% if @ground.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ground.errors.count, "error") %> prohibited this ground from being saved:</h2>
+
+      <ul>
+      <% @ground.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :size %><br>
+    <%= f.text_field :size %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

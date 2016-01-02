@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  growth_time: 2015-12-30 18:13:14
+  energetic_value: 1.5
+  price: 1.5
+
+two:
+  name: MyString
+  growth_time: 2015-12-30 18:13:14
+  energetic_value: 1.5
+  price: 1.5

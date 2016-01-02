@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Grounds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Size</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @grounds.each do |ground| %>
+      <tr>
+        <td><%= ground.size %></td>
+        <td><%= link_to 'Show', ground %></td>
+        <td><%= link_to 'Edit', edit_ground_path(ground) %></td>
+        <td><%= link_to 'Destroy', ground, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ground', new_ground_path %>
